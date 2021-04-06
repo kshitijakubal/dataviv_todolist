@@ -11,9 +11,9 @@ from django.core.paginator import Paginator
 def addTodo(request):
     if request.method == "POST":
         form = TodoForm(request.POST, request.FILES)
-        print(form)
         if form.is_valid():
             form.save()
+        
         messages.success(request,('New Task Added!'))
         return redirect('addTodo')
     else:
