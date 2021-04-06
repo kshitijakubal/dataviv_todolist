@@ -16,7 +16,9 @@ class TodoForm(forms.ModelForm):
         'deadline': DateInput(),
         
     }
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model = TodoList
-        fields = ['task_image']
+    def clean(self):
+        task = self.cleaned_data.get('task')
+        task_image = self.cleaned_data.get('task_image')
+        if not task and not task_image:
+            raise forms.ValidationError('One of fields is required')
+        return self.cleaned_data

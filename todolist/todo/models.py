@@ -26,6 +26,10 @@ class TodoList(models.Model):
             print("Timezone" ,timezone.now())
             return True
         return False
+    # def save(self):
+    #     task = self.c
+    #     super(Blog, self).save(*args, **kwargs) # Call the "real" save() method.
+    #     do_something_else()
 
 
 
