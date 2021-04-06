@@ -1,4 +1,5 @@
 # dataviv_todolist
+Project is inside master branch
 It is a project which manages all the tasks of a user.
 It has covered all the points-
 1. Performs CRUD operations on task.
