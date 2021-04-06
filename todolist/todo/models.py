@@ -20,16 +20,7 @@ class TodoList(models.Model):
     
     @property
     def is_past_due(self):
-        # self.deadline = utc.localize(self.deadline)
-        # new_deadline = self.deadline.replace(tzinfo=utc)
-        if date.today() > self.deadline:
-            print("Timezone" ,timezone.now())
-            return True
-        return False
-    # def save(self):
-    #     task = self.c
-    #     super(Blog, self).save(*args, **kwargs) # Call the "real" save() method.
-    #     do_something_else()
-
+        return date.today() > self.deadline
+            
 
 
